@@ -1,0 +1,20 @@
+-
+  I Test the tests.
+-
+ !record {model: product.template, id: product_test_register}:
+    name: 'Test Product'
+    calories: 5.3
+-
+ !assert {model: product.template,  id: product_test_register, string: Testando o teste}:
+    - calories == 5
+    - name == 'Test Product'
+- 
+ !python {model: product.template, id: product_test_register, string: Python test}: |
+   assert self.calories >= 3, "Valor deve ser maior que 3"
+   listCharEsp = ['.',',','!']
+   for i in listCharEsp:
+       assert i not in self.name, "Nome nao deve conter caracteres especiais"
+#Isso é um comentario
+
+
+
