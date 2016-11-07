@@ -9,6 +9,10 @@
     'author': "Diogo Berti, Bradoo",
     'version': '0.1',
     'depends': ['sale'],
-    'installable' : True
+    'installable' : True,
+	'test': [
+        'test/dietfact_try.yml',
+       
+    ]
 }
     

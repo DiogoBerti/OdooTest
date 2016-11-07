@@ -1,12 +1,14 @@
 -
   I Test the tests.
+  "Testei alguns parametros e como criar registros dentro da base de dados,
+  assim como fazer os asserts confirmando se os campos estão registrados corretamente"
 -
  !record {model: product.template, id: product_test_register}:
     name: 'Test Product'
-    calories: 5.3
+    calories: 2.6
 -
  !assert {model: product.template,  id: product_test_register, string: Testando o teste}:
-    - calories == 5
+    - calories == 2
     - name == 'Test Product'
 - 
  !python {model: product.template, id: product_test_register, string: Python test}: |
@@ -14,7 +16,12 @@
    listCharEsp = ['.',',','!']
    for i in listCharEsp:
        assert i not in self.name, "Nome nao deve conter caracteres especiais"
+-
 #Isso é um comentario
-
-
+ !record {model: product.template, id: product_test_register}:
+    totalfat: 2.6
+    calories: 1.3
+-
+ !assert {model: product.template,  id: product_test_register, string: Testando o teste part II}:
+    - totalfat == 2.6
 
