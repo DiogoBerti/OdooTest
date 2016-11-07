@@ -5,7 +5,7 @@
 -
  !record {model: product.template, id: product_test_register}:
     name: 'Test Product'
-    calories: 2.6
+    calories: 2.5
 -
  !assert {model: product.template,  id: product_test_register, string: Testando o teste}:
     - calories == 2
